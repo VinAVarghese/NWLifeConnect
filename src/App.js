@@ -1,11 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Form from "./pages/Form/form";
+import NoMatch from "./pages/NoMatch/noMatch";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Form />
+          </Route>
+          <Route path="*">
+            <NoMatch />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
