@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Form from "./pages/Form/form";
+import ConnectForm from "./pages/Form/form";
 import NoMatch from "./pages/NoMatch/noMatch";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Form />
+            <ConnectForm />
           </Route>
           <Route path="*">
             <NoMatch />
