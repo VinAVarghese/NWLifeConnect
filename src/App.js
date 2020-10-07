@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ConnectForm from "./pages/Form/form";
-import NoMatch from "./pages/NoMatch/noMatch";
+// import NoMatch from "./pages/NoMatch/noMatch";
 
 function App() {
   return (
@@ -11,9 +11,9 @@ function App() {
           <Route exact path="/">
             <ConnectForm />
           </Route>
-          <Route path="*">
+          {/* <Route path="*">
             <NoMatch />
-          </Route>
+          </Route> */}
         </Switch>
       </Router>
     </>

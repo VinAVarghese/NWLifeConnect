@@ -1,0 +1,12 @@
+.center-me{
+    display: flex;
+    justify-content: center;
+}
+
+.nested{
+    width: 80vw;
+}
+
+.text-center{
+    text-align: center;
+}
