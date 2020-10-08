@@ -10,3 +10,27 @@
 .text-center{
     text-align: center;
 }
+
+.headers{
+    position: relative;
+    background-color: rgba(91, 104, 221, 0.979);
+    width: 80vw;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.headers h1{
+    position: relative;
+    text-align: center;
+    margin: 5px;
+    color: white;
+}
+
+.closed{
+    display: none;
+}
+
+.open{
+    display: block;
+}
