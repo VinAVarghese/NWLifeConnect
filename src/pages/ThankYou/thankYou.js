@@ -7,7 +7,7 @@ export default function ThankYou() {
     return (
         <>
             <Hero />
-            <Row className="form" justify="center" align="middle">
+            <Row className="top-margin" justify="center" align="middle">
                 <a className="headers" href="https://nwlife.church">
                     <h1>Thank You!</h1>
                 </a>

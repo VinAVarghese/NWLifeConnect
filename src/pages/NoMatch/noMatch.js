@@ -7,7 +7,7 @@ export default function ThankYou() {
     return (
         <>
             <Hero />
-            <Row className="form" justify="center" align="middle">
+            <Row className="top-margin" justify="center" align="middle">
                 <a className="headers" href="/">
                     <h1>Page Not Found</h1>
                 </a>

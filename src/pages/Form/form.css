@@ -2,6 +2,10 @@
     height: 60vh;
 }
 
+.top-margin{
+    height: 40vh;
+}
+
 .center-me{
     display: flex;
     justify-content: center;
