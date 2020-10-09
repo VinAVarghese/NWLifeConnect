@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { Row, Form, Button } from 'antd';
-import Hero from "../../components/hero";
+import { Row, Form } from 'antd';
+import Hero from "../../components/Hero/hero";
 import ContactSection from "../../components/contactSection";
 import NextStepsSection from "../../components/nextStepsSection";
 import PrayerPraiseSection from "../../components/prayerPraiseSection";
@@ -92,7 +92,7 @@ export default function ConnectForm() {
     return (
         <>
             <Hero />
-            <Row justify="center" align="middle">
+            <Row className="form" justify="center" align="middle">
                 <Form name="nest-messages" onFinish={handleSubmit} >
 
                     <div className="headers" onClick={toggleConnect} >
@@ -129,9 +129,9 @@ export default function ConnectForm() {
 
                     <Row justify="center" align="middle">
                         <Form.Item >
-                            <Button type="primary" htmlType="submit">
+                            <button className="submit-btn" htmlType="submit">
                                 Submit
-                                    </Button>
+                            </button>
                         </Form.Item>
                     </Row>
                     
