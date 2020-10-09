@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Row, Form } from 'antd';
+import { useHistory } from "react-router-dom";
 import Hero from "../../components/Hero/hero";
 import ContactSection from "../../components/contactSection";
 import NextStepsSection from "../../components/nextStepsSection";
@@ -34,7 +35,7 @@ export default function ConnectForm() {
     const [formSections, setFormSections] = useState({
         connect: "closed",
         nextSteps: "closed",
-        pAndP: "closed" 
+        pAndP: "closed",
     })
 
     // Input Handling & State Change
@@ -60,29 +61,30 @@ export default function ConnectForm() {
         setFormSections({ 
             connect: formSections.connect === "closed"? "open":"closed",
             nextSteps: "closed",
-            pAndP: "closed" 
+            pAndP: "closed"  
         });
     }
     function toggleNextSteps() {
         setFormSections({ 
             connect: "closed",
             nextSteps: formSections.nextSteps === "closed"? "open":"closed",
-            pAndP: "closed" 
+            pAndP: "closed"  
         });
     }
     function togglePAndP() {
         setFormSections({ 
             connect: "closed",
             nextSteps: "closed",
-            pAndP: formSections.pAndP === "closed"? "open":"closed", 
+            pAndP: formSections.pAndP === "closed"? "open":"closed"
         });
-    } 
+    }
     
     // Submission Handling
+    let history = useHistory();
     function handleSubmit(e) {
         //     API.signup(formEntry).then(data => {
             //         console.log("you are a new user", data)
-            //         history.push("/thankyou")
+                    history.push("/thankyou")
             //     }).catch(function (err) {
                 //         message.error("Username already taken, please try a different username.", 2)
                 //     });
