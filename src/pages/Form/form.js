@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Row, Form } from 'antd';
+import { Row, Form, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import Hero from "../../components/Hero/hero";
 import ContactSection from "../../components/contactSection";
@@ -90,6 +90,11 @@ export default function ConnectForm() {
                 //     });
         console.log("Submitted:", formEntry);
     }
+    function checkName() {
+        if (formEntry.name === ""){
+            message.error("Please enter your name", 2);
+        } 
+    }
 
     return (
         <>
@@ -131,7 +136,7 @@ export default function ConnectForm() {
 
                     <Row justify="center" align="middle">
                         <Form.Item >
-                            <button className="submit-btn" htmltype="submit">
+                            <button className="submit-btn" htmltype="submit" onClick={checkName}>
                                 Submit
                             </button>
                         </Form.Item>
