@@ -82,11 +82,10 @@ export default function ConnectForm() {
     // Submission Handling
     let history = useHistory();
     function handleSubmit(e) {
-        //     API.signup(formEntry).then(data => {
-            //         console.log("you are a new user", data)
+        //     API.submit.then(data => {
                     history.push("/thankyou")
             //     }).catch(function (err) {
-                //         message.error("Username already taken, please try a different username.", 2)
+                //         message.error("There was an error: Please try again", 2)
                 //     });
         console.log("Submitted:", formEntry);
     }
