@@ -9,6 +9,9 @@ export default function ContactSection(props) {
     return (
         <>
             <Row style={{ marginTop:"15px" }} className="nested" justify="center" align="middle">
+                <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
+                    <Input name="name" id="pAndPName" value={props.formEntry.name} onChange={props.handleInput} />
+                </Form.Item>
                 <Col span={24}>
                     <Form.Item name="prayerPraise" label="Prayer Request / Praise Report">
                         <TextArea

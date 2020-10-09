@@ -1,7 +1,6 @@
 .hero{
     background: url("../../images/hero.jpg") 50% no-repeat;
     background-size: cover;
-    /* width: 100vw; */
     height: 40vh;
     text-align: center;
     display: -webkit-flex;

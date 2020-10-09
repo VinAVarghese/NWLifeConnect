@@ -11,9 +11,9 @@ export default function ContactSection(props) {
             <Form.Item  >
                 <Checkbox style={{ marginTop: "15px", display: "flex", justifyContent: "center", alignItems: "center" }} name={"updating"} checked={props.formEntry.updating} onChange={props.setUpdating}>
                     Updating Contact Information?
-                        </Checkbox>
+                </Checkbox>
             </Form.Item>
-            <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Name is required' }]}>
+            <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
                 <Input name="name" value={props.formEntry.name} onChange={props.handleInput} />
             </Form.Item>
             <Form.Item label="Address">
@@ -73,10 +73,10 @@ export default function ContactSection(props) {
             </Row>
 
             <Row className="nested" justify="center" align="middle">
-                <Form.Item name="guest" label="How did you hear about NWLife?">
+                <Form.Item name="invitedBy" label="How did you hear about NWLife?">
                     <TextArea
-                        name="guest"
-                        value={props.formEntry.guest}
+                        name="invitedBy"
+                        value={props.formEntry.invitedBy}
                         onChange={props.handleInput}
                         placeholder="Name of person who invited you, website, church sign, invitation card..."
                         autoSize={{ minRows: 2, maxRows: 5 }}

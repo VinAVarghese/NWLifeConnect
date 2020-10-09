@@ -21,11 +21,11 @@ export default function ConnectForm() {
         birthday: "",
         occupation: "",
         age: "",
-        guest: "",
+        invitedBy: "",
         attendance: "",
         nextStepFreshStart: false,
         nextStepLordsPrayer: false,
-        serve: false,
+        readyToServe: false,
         prayerPraise: "",
         confidential: ""
     })
@@ -129,7 +129,7 @@ export default function ConnectForm() {
 
                     <Row justify="center" align="middle">
                         <Form.Item >
-                            <button className="submit-btn" htmlType="submit">
+                            <button className="submit-btn" htmltype="submit">
                                 Submit
                             </button>
                         </Form.Item>

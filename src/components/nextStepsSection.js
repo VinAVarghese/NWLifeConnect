@@ -1,13 +1,16 @@
 import React from 'react';
-import { Row, Col, Form, Checkbox } from 'antd';
+import { Row, Col, Form, Checkbox, Input } from 'antd';
 
 export default function ContactSection(props) {
 
     return (
         <>
-        <Row className="nested" justify="space-around" align="middle">
-            <Col span={18}>
-                <h3 style={{ marginTop:"15px" }} className="text-center"> My next steps today... </h3>  
+        <Row style={{ marginTop:"15px" }} className="nested" justify="space-around" align="middle">
+            <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
+                <Input name="name" id="nextStepsName" value={props.formEntry.name} onChange={props.handleInput} />
+            </Form.Item>
+            <Col span={18} >
+                <h3 className="text-center"> My next steps today... </h3>  
                 <Form.Item  >
                         <Checkbox style={{ marginTop:"5px", display: "flex", justifyContent: "center", alignItems: "center" }} name={"nextStepFreshStart"} checked={props.formEntry.nextStepFreshStart} onChange={props.setUpdating}>
                         <strong>I'm coming home to relationship with God:</strong> it's time for a FRESH START.
@@ -31,7 +34,7 @@ export default function ContactSection(props) {
             <Col span={18}>
                 <h3 className="text-center"> Sign Up </h3>
                 <Form.Item >
-                        <Checkbox style={{ display: "flex", justifyContent: "center", alignItems: "center" }} name={"serve"} checked={props.formEntry.serve} onChange={props.setUpdating}>
+                        <Checkbox style={{ display: "flex", justifyContent: "center", alignItems: "center" }} name={"readyToServe"} checked={props.formEntry.readyToServe} onChange={props.setUpdating}>
                         I'm ready to jump in and serve at NWLife.
                         </Checkbox>
                 </Form.Item>
