@@ -94,7 +94,7 @@ export default function ConnectForm() {
     return (
         <>
             <Hero />
-            <Row className="form" justify="center" align="middle">
+            <Row className="top-margin" justify="center" align="middle">
                 <Form name="nest-messages" onFinish={handleSubmit} >
 
                     <div className="headers" onClick={toggleConnect} >
