@@ -100,9 +100,9 @@ export default function ConnectForm() {
     return (
         <>
             <Hero />
-            <Row className="top-margin" justify="space-around" >
-                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"20px"}}>
-                    <Form name="nest-messages" onFinish={handleSubmit} >
+            <Row justify="space-around" >
+                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"30px"}}>
+                    <Form className="form-width" name="nest-messages" onFinish={handleSubmit} >
 
                         <div className="headers" onClick={toggleConnect} >
                             <h1>Connect</h1>
@@ -147,7 +147,7 @@ export default function ConnectForm() {
                     </Form>
                 </Col>
 
-                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"30px"}}>
+                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"25px"}}>
                     <Slides />
                 </Col>
             </Row>
