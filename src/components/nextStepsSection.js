@@ -3,17 +3,20 @@ import { Row, Col, Form, Checkbox, Input } from 'antd';
 
 export default function ContactSection(props) {
 
+    // Import From antd
+    const { TextArea } = Input;
+
     return (
         <>
-        <Row style={{ marginTop:"15px" }} className="nested" justify="space-around" align="middle">
-            <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
-                <Input name="name" id="nextStepsName" value={props.formEntry.name} onChange={props.handleInput} />
-            </Form.Item>
+        <Row style={{ marginTop:"15px" }} justify="space-around" align="middle">
             <Col span={18} >
                 <h3 className="text-center"> My next steps today... </h3>  
+                <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
+                    <Input name="name" id="nextStepsName" value={props.formEntry.name} onChange={props.handleInput} />
+                </Form.Item>
                 <Form.Item  >
-                        <Checkbox style={{ marginTop:"5px", display: "flex", justifyContent: "center", alignItems: "center" }} name={"nextStepFreshStart"} checked={props.formEntry.nextStepFreshStart} onChange={props.setUpdating}>
-                        <strong>I'm coming home to relationship with God:</strong> it's time for a FRESH START.
+                        <Checkbox style={{ marginTop:"5px"}} name={"nextStepRelationship"} checked={props.formEntry.nextStepRelationship} onChange={props.setUpdating}>
+                        <strong>I'm coming home to relationship with God.</strong>
                         </Checkbox>
                         <ul style={{ marginTop:"10px", fontStyle: "italic" }}>
                             <li>For you are all children of God through faith In Christ Jesus. —Galatians 3.26</li>
@@ -22,21 +25,27 @@ export default function ContactSection(props) {
                 </Form.Item>
             </Col>
             <Col span={18}>
-                <Form.Item  >
-                        <Checkbox style={{ display: "flex", justifyContent: "center", alignItems: "center" }} name={"nextStepLordsPrayer"} checked={props.formEntry.nextStepLordsPrayer} onChange={props.setUpdating}>
-                        <strong>I'm praying the Lord's Prayer to re-orient my life from ME! ME! ME! to OUR, US, WE.</strong>
+                <Form.Item >
+                        <Checkbox name={"readyToServe"} checked={props.formEntry.readyToServe} onChange={props.setUpdating}>
+                        <strong>I'm ready to jump in and serve at NWLife.</strong>
                         </Checkbox>
-                        <ul style={{ marginTop:"10px", fontStyle: "italic" }}>
-                            <li>In this manner therefore pray: Our Father who art in Heaven, hallowed be Thy name. —Matthew 6.9</li>
-                        </ul>
                 </Form.Item>
             </Col>
             <Col span={18}>
-                <h3 className="text-center"> Sign Up </h3>
                 <Form.Item >
-                        <Checkbox style={{ display: "flex", justifyContent: "center", alignItems: "center" }} name={"readyToServe"} checked={props.formEntry.readyToServe} onChange={props.setUpdating}>
-                        I'm ready to jump in and serve at NWLife.
+                        <Checkbox name={"nextStepOther"} checked={props.formEntry.nextStepOther} onChange={props.setUpdating}>
+                        <strong>Other:</strong>
                         </Checkbox>
+                </Form.Item>
+                <Form.Item style={{marginTop:"-15px"}} >
+                        <Form.Item name="otherContent">
+                            <TextArea
+                                name="otherContent"
+                                value={props.formEntry.otherContent}
+                                onChange={props.handleInput}
+                                autoSize={{ minRows: 2, maxRows: 5 }}
+                            />
+                        </Form.Item>
                 </Form.Item>
             </Col>
         </Row>

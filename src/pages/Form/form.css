@@ -7,18 +7,14 @@
     justify-content: center;
 }
 
-.nested{
-    width: 80vw;
-}
-
 .text-center{
     text-align: center;
 }
 
 .headers{
     position: relative;
+    width: 100%;
     background-color: #6d92ab;
-    width: 80vw;
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
@@ -55,4 +51,22 @@
 
 .submit-btn:hover{
     background-color: #bdd3b4 ;
+}
+
+.slides-border{
+    border: 10px solid #6d92ab;
+    border-radius: 15px;
+}
+
+.giving-img{
+    background: url("../../images/giving.jpg") 50% no-repeat;
+    background-size: cover;
+}
+.reg-img{
+    background: url("../../images/register.jpg") 50% no-repeat;
+    background-size: cover;
+}
+.res-img{
+    background: url("../../images/resource.jpg") 50% no-repeat;
+    background-size: cover;
 }

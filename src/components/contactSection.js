@@ -8,7 +8,7 @@ export default function ContactSection(props) {
 
     return (
         <>
-            <Form.Item  >
+            <Form.Item>
                 <Checkbox style={{ marginTop: "15px", display: "flex", justifyContent: "center", alignItems: "center" }} name={"updating"} checked={props.formEntry.updating} onChange={props.setUpdating}>
                     Updating Contact Information?
                 </Checkbox>
@@ -20,7 +20,7 @@ export default function ContactSection(props) {
                 <Input name="address" value={props.formEntry.address} onChange={props.handleInput} />
             </Form.Item>
 
-            <Row className="nested" justify="space-around" align="middle">
+            <Row justify="space-around" align="middle">
                 <Col span={7}>
                     <Form.Item label="Apt #">
                         <Input name="apt" value={props.formEntry.apt} onChange={props.handleInput} />
@@ -45,7 +45,7 @@ export default function ContactSection(props) {
                 <Input name="phone" value={props.formEntry.phone} onChange={props.handleInput} />
             </Form.Item>
 
-            <Row className="nested" justify="space-around" align="middle">
+            <Row justify="space-around" align="middle">
                 <Col span={11}>
                     <Form.Item name="birthday" label="Birthday">
                         <DatePicker format="DD/MM/YYYY" name="birthday" value={props.formEntry.birthday} onChange={props.setBirthday} />
@@ -58,7 +58,7 @@ export default function ContactSection(props) {
                 </Col>
             </Row>
 
-            <Row className="nested text-center" justify="space-around" align="middle">
+            <Row className="text-center" justify="space-around" align="middle">
                 <Form.Item label="Age">
                     <Radio.Group name="age" onChange={props.handleInput} >
                         <Radio value={"under 12"}>under 12</Radio>
@@ -72,7 +72,7 @@ export default function ContactSection(props) {
                 </Form.Item>
             </Row>
 
-            <Row className="nested" justify="center" align="middle">
+            <Row justify="center" align="middle">
                 <Form.Item name="invitedBy" label="How did you hear about NWLife?">
                     <TextArea
                         name="invitedBy"
@@ -84,7 +84,7 @@ export default function ContactSection(props) {
                 </Form.Item>
             </Row>
 
-            <Row className="nested text-center" justify="space-around" align="middle">
+            <Row className="text-center" justify="space-around" align="middle">
                 <Form.Item label="Check One">
                     <Radio.Group name="attendance" onChange={props.handleInput} >
                         <Radio value={"1st time guest"}>1st time guest</Radio>

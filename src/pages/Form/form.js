@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
-import { Row, Form, message } from 'antd';
+import React, { useState } from 'react';
+import { Row, Col, Form, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import Hero from "../../components/Hero/hero";
 import ContactSection from "../../components/contactSection";
 import NextStepsSection from "../../components/nextStepsSection";
 import PrayerPraiseSection from "../../components/prayerPraiseSection";
+import Slides from "../../components/slides";
 import "./form.css"
 
 export default function ConnectForm() {
@@ -24,9 +25,10 @@ export default function ConnectForm() {
         age: "",
         invitedBy: "",
         attendance: "",
-        nextStepFreshStart: false,
-        nextStepLordsPrayer: false,
+        nextStepRelationship: false,
         readyToServe: false,
+        nextStepOther: "",
+        otherContent: "",
         prayerPraise: "",
         confidential: ""
     })
@@ -45,11 +47,11 @@ export default function ConnectForm() {
     }
 
     function setUpdating(event) {
-        const { name , checked } = event.target;
-        if(checked){
+        const { name, checked } = event.target;
+        if (checked) {
             setFormEntry({ ...formEntry, [name]: true });
         } else {
-            setFormEntry({ ...formEntry, [name]: false });   
+            setFormEntry({ ...formEntry, [name]: false });
         }
     }
 
@@ -58,54 +60,55 @@ export default function ConnectForm() {
     }
 
     function toggleConnect() {
-        setFormSections({ 
-            connect: formSections.connect === "closed"? "open":"closed",
+        setFormSections({
+            connect: formSections.connect === "closed" ? "open" : "closed",
             nextSteps: "closed",
-            pAndP: "closed"  
+            pAndP: "closed"
         });
     }
     function toggleNextSteps() {
-        setFormSections({ 
+        setFormSections({
             connect: "closed",
-            nextSteps: formSections.nextSteps === "closed"? "open":"closed",
-            pAndP: "closed"  
+            nextSteps: formSections.nextSteps === "closed" ? "open" : "closed",
+            pAndP: "closed"
         });
     }
     function togglePAndP() {
-        setFormSections({ 
+        setFormSections({
             connect: "closed",
             nextSteps: "closed",
-            pAndP: formSections.pAndP === "closed"? "open":"closed"
+            pAndP: formSections.pAndP === "closed" ? "open" : "closed"
         });
     }
-    
+
     // Submission Handling
     let history = useHistory();
     function handleSubmit(e) {
         //     API.submit.then(data => {
-                    history.push("/thankyou")
-            //     }).catch(function (err) {
-                //         message.error("There was an error: Please try again", 2)
-                //     });
+        history.push("/thankyou")
+        //     }).catch(function (err) {
+        //         message.error("There was an error: Please try again", 2)
+        //     });
         console.log("Submitted:", formEntry);
     }
     function checkName() {
-        if (formEntry.name === ""){
+        if (formEntry.name === "") {
             message.error("Please enter your name", 2);
-        } 
+        }
     }
 
     return (
         <>
             <Hero />
-            <Row className="top-margin" justify="center" align="middle">
-                <Form name="nest-messages" onFinish={handleSubmit} >
+            <Row className="top-margin" justify="space-around" >
+                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"20px"}}>
+                    <Form name="nest-messages" onFinish={handleSubmit} >
 
-                    <div className="headers" onClick={toggleConnect} >
-                        <h1>Connect</h1>
-                    </div>
+                        <div className="headers" onClick={toggleConnect} >
+                            <h1>Connect</h1>
+                        </div>
                         <div className={formSections.connect}>
-                            <ContactSection 
+                            <ContactSection
                                 formEntry={formEntry}
                                 handleInput={handleInput}
                                 setUpdating={setUpdating}
@@ -113,35 +116,40 @@ export default function ConnectForm() {
                                 handleSubmit={handleSubmit}
                             />
                         </div>
-                    <div className="headers" onClick={toggleNextSteps} >
-                        <h1>Next Steps</h1>
-                    </div>
+                        <div className="headers" onClick={toggleNextSteps} >
+                            <h1>Next Steps</h1>
+                        </div>
                         <div className={formSections.nextSteps}>
-                            <NextStepsSection 
+                            <NextStepsSection
                                 formEntry={formEntry}
                                 setUpdating={setUpdating}
                             />
                         </div>
-                    <div className="headers" onClick={togglePAndP} >
-                        <h1>Prayer & Praise</h1>
-                    </div>
+                        <div className="headers" onClick={togglePAndP} >
+                            <h1>Prayer & Praise</h1>
+                        </div>
                         <div className={formSections.pAndP}>
-                            <PrayerPraiseSection 
+                            <PrayerPraiseSection
                                 formEntry={formEntry}
                                 handleInput={handleInput}
                                 setUpdating={setUpdating}
                             />
                         </div>
 
-                    <Row justify="center" align="middle">
-                        <Form.Item >
-                            <button className="submit-btn" htmltype="submit" onClick={checkName}>
-                                Submit
+                        <Row justify="center" align="middle">
+                            <Form.Item >
+                                <button className="submit-btn" htmltype="submit" onClick={checkName}>
+                                    Submit
                             </button>
-                        </Form.Item>
-                    </Row>
-                    
-                </Form> 
+                            </Form.Item>
+                        </Row>
+
+                    </Form>
+                </Col>
+
+                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"30px"}}>
+                    <Slides />
+                </Col>
             </Row>
         </>
     )
