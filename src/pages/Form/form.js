@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API from "../../utils/API";
 import { Row, Col, Form, message } from 'antd';
 import { useHistory } from "react-router-dom";
 import Hero from "../../components/Hero/hero";
@@ -84,12 +85,12 @@ export default function ConnectForm() {
     // Submission Handling
     let history = useHistory();
     function handleSubmit(e) {
-        //     API.submit.then(data => {
-        history.push("/thankyou")
-        //     }).catch(function (err) {
-        //         message.error("There was an error: Please try again", 2)
-        //     });
-        console.log("Submitted:", formEntry);
+        API.postForm(formEntry).then(results => {
+            console.log("Submission Recieved:", formEntry);
+            history.push("/thankyou")
+        }).catch(function (err) {
+            message.error("There was an error: Please try submitting again", 2)
+        });
     }
     function checkName() {
         if (formEntry.name === "") {
@@ -101,7 +102,7 @@ export default function ConnectForm() {
         <>
             <Hero />
             <Row justify="space-around" className="responsive-alignment" >
-                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"30px"}}>
+                <Col sm={{ span: 24 }} md={{ span: 10 }} align="middle" style={{ marginTop: "30px" }}>
                     <Form className="form-width" name="nest-messages" onFinish={handleSubmit} >
 
                         <div className="headers" onClick={toggleConnect} >
@@ -147,7 +148,7 @@ export default function ConnectForm() {
                     </Form>
                 </Col>
 
-                <Col sm={{span:24}} md={{span:10}} align="middle" style={{marginTop:"25px"}}>
+                <Col sm={{ span: 24 }} md={{ span: 10 }} align="middle" style={{ marginTop: "25px" }}>
                     <Slides />
                 </Col>
             </Row>
