@@ -7,6 +7,15 @@
     text-align: center;
 }
 
+@media screen and (min-width: 768px) { 
+    .responsive-alignment{
+        margin-top: 16.25vh;
+    }
+    .slides-border{
+        margin-top: -6.5vh;
+    }
+}
+
 .headers{
     position: relative;
     background-color: #6d92ab;
@@ -14,6 +23,12 @@
     margin-top: 10px;
     cursor: pointer;
     transition: all .5s ease-in-out;
+}
+
+@media screen and (max-width: 575px) { 
+    .headers {
+        width: 80vw;
+    }
 }
 
 .headers h1{

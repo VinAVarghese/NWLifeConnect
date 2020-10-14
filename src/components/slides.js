@@ -4,10 +4,10 @@ import { Carousel } from 'antd';
 export default function Slides() {
 
     const contentStyle = {
-        height: '200px',
+        height: '30vh',
         color: '#fff',
         textShadow: "1px 2px 5px black",
-        lineHeight: '200px',
+        lineHeight: '30vh',
         textAlign: 'center',
         margin:"0",
         backgroundColor:"#6d92ab"
