@@ -86,8 +86,7 @@ export default function ConnectForm() {
     let history = useHistory();
     function handleSubmit(e) {
         API.postForm(formEntry).then(results => {
-            // console.log("Submission Recieved:", formEntry);
-            console.log("Results:",results);
+            // console.log("Results:",results);
             history.push("/thankyou")
         }).catch(function (err) {
             console.log(err);
