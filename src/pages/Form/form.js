@@ -28,10 +28,10 @@ export default function ConnectForm() {
         attendance: "",
         nextStepRelationship: false,
         readyToServe: false,
-        nextStepOther: "",
+        nextStepOther: false,
         otherContent: "",
         prayerPraise: "",
-        confidential: ""
+        confidential: false
     })
 
     // Sections State Control
@@ -86,9 +86,11 @@ export default function ConnectForm() {
     let history = useHistory();
     function handleSubmit(e) {
         API.postForm(formEntry).then(results => {
-            console.log("Submission Recieved:", formEntry);
+            // console.log("Submission Recieved:", formEntry);
+            console.log(results);
             history.push("/thankyou")
         }).catch(function (err) {
+            console.log(err);
             message.error("There was an error: Please try submitting again", 2)
         });
     }
@@ -141,7 +143,7 @@ export default function ConnectForm() {
                             <Form.Item >
                                 <button className="submit-btn" htmltype="submit" onClick={checkName}>
                                     Submit
-                            </button>
+                                </button>
                             </Form.Item>
                         </Row>
 
