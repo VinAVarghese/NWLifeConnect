@@ -1,6 +1,7 @@
 import axios from "axios";
+// Change when locally testing and deploying
 const urlPrefix = "https://nwlife-connect-server.herokuapp.com";
-// const urlPrefix = "http://127.0.0.1:8080";
+// const urlPrefix = "http://localhost:8080";
 
 
 export default {
