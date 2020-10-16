@@ -58,9 +58,9 @@ export default function ConnectForm() {
         }
     }
 
-    function setBirthday(date, dateString) {
-        setFormEntry({ ...formEntry, birthday: dateString });
-    }
+    // function setBirthday(date, dateString) {
+    //     setFormEntry({ ...formEntry, birthday: dateString });
+    // }
 
     function toggleConnect() {
         setFormSections({
@@ -123,7 +123,6 @@ export default function ConnectForm() {
                                 formEntry={formEntry}
                                 handleInput={handleInput}
                                 setUpdating={setUpdating}
-                                setBirthday={setBirthday}
                                 handleSubmit={handleSubmit}
                             />
                         </div>

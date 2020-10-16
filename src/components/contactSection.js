@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Form, Checkbox, Input, DatePicker, Radio } from 'antd';
+import { Row, Col, Form, Checkbox, Input, Radio } from 'antd';
 
 export default function ContactSection(props) {
 
@@ -48,7 +48,7 @@ export default function ContactSection(props) {
             <Row justify="space-around" align="middle">
                 <Col span={11}>
                     <Form.Item name="birthday" label="Birthday">
-                        <DatePicker format="DD/MM/YYYY" name="birthday" value={props.formEntry.birthday} onChange={props.setBirthday} />
+                        <Input placeholder="MM/DD/YYYY" name="birthday" value={props.formEntry.birthday} onChange={props.handleInput} />
                     </Form.Item>
                 </Col>
                 <Col span={11}>

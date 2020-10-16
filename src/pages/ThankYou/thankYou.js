@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import Hero from "../../components/Hero/hero";
-import Slides from "../../components/slides";
+// import Slides from "../../components/slides";
+import TileLinks from "../../components/tileLinks";
 
 export default function ThankYou() {
 
@@ -14,8 +15,9 @@ export default function ThankYou() {
                         <h1>Thank You!</h1>
                     </div></a>
                 </Col>
-                <Col sm={{span:24}} md={{span:10}} style={{marginTop:"25px"}}>
-                    <Slides />
+                <Col sm={{span:24}} md={{span:10}}>
+                    {/* <Slides /> */}
+                    <TileLinks />
                 </Col>
             </Row>
         </>
