@@ -6,7 +6,8 @@ import Hero from "../../components/Hero/hero";
 import ContactSection from "../../components/contactSection";
 import NextStepsSection from "../../components/nextStepsSection";
 import PrayerPraiseSection from "../../components/prayerPraiseSection";
-import Slides from "../../components/slides";
+// import Slides from "../../components/slides";
+import TileLinks from "../../components/tileLinks";
 import "./form.css"
 
 export default function ConnectForm() {
@@ -150,7 +151,8 @@ export default function ConnectForm() {
                 </Col>
 
                 <Col sm={{ span: 24 }} md={{ span: 10 }} align="middle" style={{ marginTop: "25px" }}>
-                    <Slides />
+                    {/* <Slides /> */}
+                    <TileLinks />
                 </Col>
             </Row>
         </>

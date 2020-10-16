@@ -82,13 +82,47 @@
     border-radius: 15px;
 }
 
+.tile-top{
+    margin-top: 45px;
+}
+.tile-size{
+    width: 200px;
+    height: 200px;
+}
+.tile-size h1{
+    position: relative;
+    top:65px;
+    color: #fff;
+    text-shadow: 1px 2px 5px black;
+    text-align: center;
+    margin:0;
+}
+
+@media screen and (max-width: 400px) { 
+    .tile-size{
+        width: 150px;
+        height: 150px;
+    }
+    .tile-size h1{
+        position: relative;
+        top:45px;
+    }
+    .tile-top{
+        margin-top: 0px;
+    }
+}
+
 .giving-img{
     background: url("../../images/giving.jpg") 50% no-repeat;
     background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
 }
 .reg-img{
     background: url("../../images/register.jpg") 50% no-repeat;
     background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
 }
 .res-img{
     background: url("../../images/resource.jpg") 50% no-repeat;
