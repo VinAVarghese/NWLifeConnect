@@ -78,7 +78,7 @@
 }
 
 .slides-border{
-    border: 10px solid #6d92ab;
+    border: 4px solid #6d92ab;
     border-radius: 15px;
 }
 
@@ -91,24 +91,29 @@
 }
 .tile-size h1{
     position: relative;
-    top:65px;
+    top:70px;
     color: #fff;
     text-shadow: 1px 2px 5px black;
     text-align: center;
     margin:0;
 }
-
-@media screen and (max-width: 400px) { 
+@media screen and (max-width: 950px) { 
     .tile-size{
         width: 150px;
         height: 150px;
+        margin:5px;
     }
     .tile-size h1{
         position: relative;
-        top:45px;
+        top:50px;
     }
     .tile-top{
-        margin-top: 0px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 400px) { 
+    .tile-top{
+        margin-top: -30px;
     }
 }
 

@@ -9,8 +9,7 @@ export default function ContactSection(props) {
     return (
         <>
         <Row style={{ marginTop:"15px" }} justify="space-around" align="middle">
-            <Col span={18} >
-                <h3 className="text-center"> My next steps today... </h3>  
+            <Col span={18} > 
                 <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
                     <Input name="name" id="nextStepsName" value={props.formEntry.name} onChange={props.handleInput} />
                 </Form.Item>

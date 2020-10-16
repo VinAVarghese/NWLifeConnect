@@ -40,6 +40,7 @@ export default function ConnectForm() {
         connect: "closed",
         nextSteps: "closed",
         pAndP: "closed",
+        name: "closed"
     })
 
     // Input Handling & State Change
@@ -65,21 +66,24 @@ export default function ConnectForm() {
         setFormSections({
             connect: formSections.connect === "closed" ? "open" : "closed",
             nextSteps: "closed",
-            pAndP: "closed"
+            pAndP: "closed",
+            name: formSections.connect === "closed" ? "open" : "closed",
         });
     }
     function toggleNextSteps() {
         setFormSections({
             connect: "closed",
             nextSteps: formSections.nextSteps === "closed" ? "open" : "closed",
-            pAndP: "closed"
+            pAndP: "closed",
+            name: formSections.nextSteps === "closed" ? "open" : "closed"
         });
     }
     function togglePAndP() {
         setFormSections({
             connect: "closed",
             nextSteps: "closed",
-            pAndP: formSections.pAndP === "closed" ? "open" : "closed"
+            pAndP: formSections.pAndP === "closed" ? "open" : "closed",
+            name: formSections.pAndP === "closed" ? "open" : "closed"
         });
     }
 
@@ -106,7 +110,11 @@ export default function ConnectForm() {
             <Row justify="space-around" className="responsive-alignment" >
                 <Col sm={{ span: 24 }} md={{ span: 10 }} align="middle" style={{ marginTop: "30px" }}>
                     <Form className="form-width" name="nest-messages" onFinish={handleSubmit} >
-
+                    {/* <div className={formSections.name}>
+                        <Form.Item name="name" label="Full Name" rules={[{ required: true, message: 'Name is required' }]}>
+                            <Input name="name" value={formEntry.name} onChange={handleInput} />
+                        </Form.Item>
+                    </div> */}
                         <div className="headers" onClick={toggleConnect} >
                             <h1>Connect</h1>
                         </div>
@@ -125,6 +133,7 @@ export default function ConnectForm() {
                         <div className={formSections.nextSteps}>
                             <NextStepsSection
                                 formEntry={formEntry}
+                                handleInput={handleInput}
                                 setUpdating={setUpdating}
                             />
                         </div>
