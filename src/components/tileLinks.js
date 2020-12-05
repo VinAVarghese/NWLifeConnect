@@ -33,6 +33,13 @@ export default function TileLinks() {
                             <h1>Toy Drive</h1>
                     </Col>
                 </a>
+                <a href="http://www.nwlifechurch.com/christmas/">
+                    <Row justify="space-around" align="middle">
+                        <Col className="christmas-img slides-border">
+                                <h1>Christmas Service</h1>
+                        </Col>
+                    </Row>
+                </a>
             </Row>
             
         </>

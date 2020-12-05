@@ -91,7 +91,7 @@
 }
 .tile-size h1{
     position: relative;
-    top:70px;
+    top:72px;
     color: #fff;
     text-shadow: 1px 2px 5px black;
     text-align: center;
@@ -104,8 +104,7 @@
         margin:5px;
     }
     .tile-size h1{
-        position: relative;
-        top:50px;
+        top:48px;
     }
     .tile-top{
         margin-top: 10px;
@@ -138,8 +137,39 @@
     max-width: 100%;
     max-height: 100%;
 }
+/* Removed the tile-size and tile-size h1 class effects (and class in js) for .christmas-img because the text needed slightly different sizing */
+.christmas-img{
+    background: url("../../images/christmas.jpg") 50% no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+}
+.christmas-img h1{
+    position: relative;
+    top:53px;
+    color: #fff;
+    text-shadow: 1px 2px 5px black;
+    text-align: center;
+    margin:0;
+}
+/* Adding this media query soly for the unique link */
+@media screen and (max-width: 950px) { 
+    .christmas-img{
+        width: 150px;
+        height: 150px;
+        margin:5px;
+    }
+    .christmas-img h1{
+        top:30px;
+    }
+}
 @media screen and (min-width: 950px){
     .toy-img{
+        margin-top: 10px;
+    }
+    .christmas-img{
         margin-top: 10px;
     }
 }
